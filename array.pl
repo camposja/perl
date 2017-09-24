@@ -8,6 +8,10 @@ sub main {
     'sum.png'
   );
 
+  foreach my $image(@images) {
+    print "$image\n";
+  }
+
   # declaring variable
   my $image  = 'img/screen.png';
 
