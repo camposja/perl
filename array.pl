@@ -1,25 +1,24 @@
 use strict;
 use warnings;
 
+# turn off output buffering
+# $|=1
+
 sub main {
   # declaring array
   my @images = (
     'img/screen.png',
-    'sum.png'
+    'sum.png',
+    'random.txt',
   );
 
-  foreach my $image(@images) {
-    print "$image\n";
-  }
-
-  # declaring variable
-  my $image  = 'img/screen.png';
-
-  if (-f 'img/screen.png') {
-    print "Found image file: $image!!\n";
-  }
-  else {
-    print "File: $image not found :( \n";
+  foreach my $image (@images) {
+    if (-f $image) {
+      print "Found image file: $image\n";
+    }
+    else {
+      print "File: $image not found :( \n";
+    }
   }
 }
 
