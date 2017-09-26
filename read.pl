@@ -4,10 +4,13 @@ use warnings;
 sub main {
   my $book = 'docs/divinacommedia.txt';
 
-  open(INPUT, $book);
+  open(INPUT, $book) or die("Input file $book not found.\n");
 
-  die "Input file $book not found.";
-
+  while(my $line = <INPUT>) {
+    if ($line =~ / Canto /) {
+      print "$line\n"
+    }
+  }
   close(INPUT);
 };
 
